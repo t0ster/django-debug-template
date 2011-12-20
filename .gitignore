@@ -5,4 +5,5 @@ bin
 develop-eggs
 parts
 project.db
-
+build
+dist
