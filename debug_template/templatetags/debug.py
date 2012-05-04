@@ -1,3 +1,4 @@
+from ipdb import set_trace
 from django import template
 
 register = template.Library()
@@ -5,6 +6,10 @@ register = template.Library()
 
 @register.filter
 def ipdb(element):
-    import ipdb
-    ipdb.set_trace()
+    set_trace()
     return element
+
+
+@register.simple_tag(takes_context=True)
+def ipdb_tag(context):
+    set_trace()
